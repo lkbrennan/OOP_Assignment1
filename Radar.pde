@@ -6,17 +6,20 @@ class Radar
   float cx, cy;
   float radius = 100;
   float centerx,centery;
+  String s;
+  int i=0;
+  boolean message = false;
   
   Radar()
   {
-    this.cx = 1250;
-    this.cy = 150;
+    this.cx = (width/10)*9;
+    this.cy = (height/4);
   }
   
   void update()
   {
     strokeWeight(1);
-    stroke(0, 0, 250);
+    stroke(100,200,255);
     noFill();
     ellipse(cx, cy, radius * 2, radius * 2);
   
@@ -37,6 +40,7 @@ class Radar
       {
         centerx = mouseX;
         centery = mouseY;
+        message = true;
       }
     }
     
@@ -44,5 +48,23 @@ class Radar
     fill(255,0,0);
     ellipse(centerx, centery,20,20);
     
+    if(message == true)
+    {
+      if(i<100)
+      {
+        textSize(10);
+        text("Sending Ping ...... " + i + "% Completed",(width/10)*8,(height/5)*2);
+        if(frameCount%5==0)
+        {
+          i++;
+        }
+      }
+      if(i>=100)
+      {
+        text("Sending Ping Completed",(width/10)*9,(height/5)*2);
+      }
+    }
+    
   }
+ 
 }

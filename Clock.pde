@@ -14,7 +14,7 @@ class Clock
      int h = hour();
      
      strokeWeight(10);
-     stroke(0,0,250);
+     stroke(100,200,255);
      x1 = map(h,0,23,1150,1250);
      x2 = map(m,0,59,1150,1250);
      x3 = map(s,0,59,1150,1250);
