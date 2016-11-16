@@ -14,6 +14,7 @@ class Vision
   
   void render()
   {
+    strokeWeight(1);
     pushMatrix();
     translate(width/2,height/2);
     rotate(theta);

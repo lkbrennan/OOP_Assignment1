@@ -13,10 +13,10 @@ Clock clock;
 
 void draw()
 {
-  background(0);
-  //vision.render();
-  //vision.update();
-  //radar.update();
-  clock.update();
+  background(100);
+  vision.render();
+  vision.update();
+  radar.update();
+  //clock.update();
   
 }

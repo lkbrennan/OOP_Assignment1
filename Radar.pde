@@ -4,7 +4,8 @@ class Radar
   int trail = 50;  
   float theta = 0;
   float cx, cy;
-  float radius = 50;
+  float radius = 100;
+  float centerx,centery;
   
   Radar()
   {
@@ -14,6 +15,7 @@ class Radar
   
   void update()
   {
+    strokeWeight(1);
     stroke(0, 0, 250);
     noFill();
     ellipse(cx, cy, radius * 2, radius * 2);
@@ -28,5 +30,19 @@ class Radar
       line(cx, cy, x, y);
     }
     theta += speed;
+    
+    if(mousePressed == true)
+    {
+      if((mouseX>(cx-radius))&&(mouseX<(cx+radius))&&(mouseY>(cy-radius))&&(mouseY<(cy+radius)))
+      {
+        centerx = mouseX;
+        centery = mouseY;
+      }
+    }
+    
+    noStroke();
+    fill(255,0,0);
+    ellipse(centerx, centery,20,20);
+    
   }
 }
