@@ -1,6 +1,6 @@
 void setup()
 {
-  size(1366,768);
+  fullScreen();
   
   vision = new Vision(220,260,360);
   radar = new Radar();

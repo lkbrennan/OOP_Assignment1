@@ -8,6 +8,7 @@ class Radar
   float centerx,centery;
   String s;
   int i=0;
+  int counter=0;
   boolean message = false;
   
   Radar()
@@ -27,7 +28,7 @@ class Radar
     for(int i = 0 ; i < trail ; i ++)
     {
       float lineTheta = theta - (i * speed);
-      stroke(0, 0, 250 - (i * intensityChange));
+      stroke(100,200, 255 - (i * intensityChange));
       float x = cx + sin(lineTheta) * radius;
       float y = cy - cos(lineTheta) * radius;
       line(cx, cy, x, y);
@@ -45,15 +46,15 @@ class Radar
     }
     
     noStroke();
-    fill(255,0,0);
+    fill(#FBFF29);
     ellipse(centerx, centery,20,20);
     
     if(message == true)
     {
       if(i<100)
       {
-        textSize(10);
-        text("Sending Ping ...... " + i + "% Completed",(width/10)*8,(height/5)*2);
+        textSize(12);
+        text("Sending Ping ...... " + i + "% Completed",(width/11)*9,(height/5)*2);
         if(frameCount%5==0)
         {
           i++;
@@ -61,7 +62,17 @@ class Radar
       }
       if(i>=100)
       {
-        text("Sending Ping Completed",(width/10)*9,(height/5)*2);
+        text("Sending Ping Completed",(width/6)*5,(height/5)*2);
+        
+        if(frameCount%3==0)
+        {
+          counter++;
+          
+          if(counter==50)
+          {
+            message = false;
+          }
+        }
       }
     }
     

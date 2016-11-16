@@ -77,6 +77,6 @@ class Vision
     theta+=0.05f;
     theta1-=0.1f;
     theta2+=0.02f;
-    theta3-=0.03f;
+    theta3-=0.01f;
   }
 }
