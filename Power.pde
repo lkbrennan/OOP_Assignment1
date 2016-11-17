@@ -10,19 +10,44 @@ class Power
   
   void update()
   {
-    if(frameCount%60==0)
-    {
-      power-=0.01f;
-    }
-    
-    arc = map(power,0,100,PI,TWO_PI);
-    
     strokeWeight(10);
-    noFill();
-    stroke(100,200,250);
-    arc(width/10,(height/5)*4,200,200,PI,arc);
-    textSize(30);
-    fill(100,200,250);
-    text(power + "%",(width/10)-50,(height/5)*4);
+    
+          if(frameCount%10==0)
+      {
+        power-=1;
+      }
+      
+      arc = map(power,0,100,PI,TWO_PI);
+      
+    if(power>40)
+    {
+      stroke(100,200,250);
+      noFill();
+      arc(width/10,(height/5)*4,200,200,PI,arc);
+      fill(100,200,250);
+      textSize(30);
+      text(power + "%",(width/10)-50,(height/5)*4);
+    }
+    if((power<40)&&(power>15))
+    {
+      stroke(#FBFF29);
+      noFill();
+      arc(width/10,(height/5)*4,200,200,PI,arc);
+      fill(#FBFF29);
+      textSize(30);
+      text(power + "%",(width/10)-50,(height/5)*4);
+    }
+    if(power<20)
+    {
+      stroke(250,0,0);
+      noFill();
+      arc(width/10,(height/5)*4,200,200,PI,arc);
+      fill(250,0,0);
+      textSize(30);
+      text(power + "%",(width/10)-50,(height/5)*4);
+    }
+      
+    
+    
   }
 }

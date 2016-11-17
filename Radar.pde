@@ -62,7 +62,8 @@ class Radar
       }
       if(i>=100)
       {
-        text("Sending Ping Completed",(width/6)*5,(height/5)*2);
+        textSize(12);
+        text("Sending Ping Completed",(cx-radius),(cy+radius)+20);
         
         if(frameCount%3==0)
         {
