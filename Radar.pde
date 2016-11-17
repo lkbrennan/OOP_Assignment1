@@ -54,7 +54,7 @@ class Radar
       if(i<100)
       {
         textSize(12);
-        text("Sending Ping ...... " + i + "% Completed",(width/11)*9,(height/5)*2);
+        text("Sending Ping ...... " + i + "% Completed",(cx-radius),(cy+radius)+20);
         if(frameCount%5==0)
         {
           i++;

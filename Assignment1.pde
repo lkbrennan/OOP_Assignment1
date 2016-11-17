@@ -5,6 +5,7 @@ void setup()
   vision = new Vision(220,260,360);
   radar = new Radar();
   clock = new Clock();
+  power = new Power();
 }
 
 //PFont scifi;
@@ -12,6 +13,7 @@ void setup()
 Vision vision;
 Radar radar;
 Clock clock;
+Power power;
 
 void draw()
 {
@@ -22,6 +24,7 @@ void draw()
   vision.render();
   vision.update();
   radar.update();
+  power.update();
   //clock.update();
   
 }
