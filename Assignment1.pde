@@ -6,6 +6,7 @@ void setup()
   radar = new Radar();
   clock = new Clock();
   power = new Power();
+  compass = new Compass();
 }
 
 //PFont scifi;
@@ -14,6 +15,7 @@ Vision vision;
 Radar radar;
 Clock clock;
 Power power;
+Compass compass;
 
 void draw()
 {
@@ -25,6 +27,7 @@ void draw()
   vision.update();
   radar.update();
   power.update();
+  compass.render();
   //clock.update();
   
 }

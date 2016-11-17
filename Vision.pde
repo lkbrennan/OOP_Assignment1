@@ -77,6 +77,16 @@ class Vision
     theta+=0.05f;
     theta1-=0.1f;
     theta2+=0.02f;
-    theta3-=0.01f;
+    
+    float i = random(0,1);
+    
+    if(i<0.5f)
+    {
+      theta3-=0.01f;
+    }
+    if(i>0.5f)
+    {
+      theta3+=0.01f;
+    }
   }
 }
