@@ -12,7 +12,7 @@ class Compass
   
   void render()
   {
-    strokeWeight(1);
+    strokeWeight(3);
     pushMatrix();
     translate(cx,cy1);
     rotate(theta);

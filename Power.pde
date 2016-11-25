@@ -8,7 +8,7 @@ class Power
     //arc = map(power,0,100,0,180);
   }
   
-  void update()
+  boolean update()
   {
     strokeWeight(10);
     
@@ -28,7 +28,7 @@ class Power
       textSize(30);
       text(power + "%",(width/12)-50,(height/5)*4);
     }
-    if((power<40)&&(power>15))
+    if((power<40)&&(power>20))
     {
       stroke(#FBFF29);
       noFill();
@@ -37,7 +37,7 @@ class Power
       textSize(30);
       text(power + "%",(width/12)-50,(height/5)*4);
     }
-    if(power<20)
+    if((power<20)&&(power>0))
     {
       stroke(250,0,0);
       noFill();
@@ -45,9 +45,18 @@ class Power
       fill(250,0,0);
       textSize(30);
       text(power + "%",(width/12)-50,(height/5)*4);
+      fill(0);
+      stroke(255,0,0);
+      rect(width/4,height/4,width/2,height/4);
+      fill(250,0,0);
+      text("POWER FATALLY LOW",width/3,height/3);
     }
-      
+    if(power<=0)
+    {
+      text("0%",(width/12)-50,(height/5)*4);
+      return true;
+    }
     
-    
+    return false;
   }
 }
