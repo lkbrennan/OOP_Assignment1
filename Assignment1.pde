@@ -45,8 +45,9 @@ void draw()
   radar.update();
   dead = power.update();
   compass.render();
-  mic.render();
-  mic.update();
+  compass.update();
+  //mic.render();
+  //mic.update();
   //clock.update();
   
   if(dead == true)
@@ -78,7 +79,6 @@ void endScreen()
     
 }
 
-//width/30,height/6,(width/30)*4,height/20
 void mouseReleased()
 {
   if((mouseX<width+((width/30)*4))&&(mouseX>width/30))

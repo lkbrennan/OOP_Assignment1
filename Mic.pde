@@ -26,8 +26,8 @@ class Mic
     // so we need to scale them up to see the waveform
     for(int i = width/30; i < in.bufferSize() - 1; i++)
     {
-      line(i,(height/20)*14 + in.left.get(i)*10, i+1, (height/20)*16 + in.left.get(i+1)*10);
-      //line(i, (width/3 + 150) + in.right.get(i)*50, i+1,(width/3 + 150) + in.right.get(i+1)*50);
+      line(i, height/2 + in.left.get(i)*50, (width/30)+50, height/2 + in.left.get(i+1)*50);
+      line(i, (height/2)+30 + in.right.get(i)*50, (width/30)+50 , (height/2)+30 + in.right.get(i+1)*50);
     }
     
     if ( recorder.isRecording() )

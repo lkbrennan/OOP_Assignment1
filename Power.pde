@@ -26,7 +26,7 @@ class Power
       arc(width/12,(height/5)*4,150,150,PI,arc);
       fill(100,200,250);
       textSize(30);
-      text(power + "%",(width/12)-50,(height/5)*4);
+      text(power + "%",(width/17),(height/5)*4);
     }
     if((power<40)&&(power>20))
     {
@@ -35,7 +35,7 @@ class Power
       arc(width/12,(height/5)*4,150,150,PI,arc);
       fill(#FBFF29);
       textSize(30);
-      text(power + "%",(width/12)-50,(height/5)*4);
+      text(power + "%",(width/17),(height/5)*4);
     }
     if((power<20)&&(power>0))
     {
@@ -44,7 +44,7 @@ class Power
       arc(width/12,(height/5)*4,150,150,PI,arc);
       fill(250,0,0);
       textSize(30);
-      text(power + "%",(width/12)-50,(height/5)*4);
+      text(power + "%",(width/17),(height/5)*4);
       fill(0);
       stroke(255,0,0);
       rect(width/4,height/4,width/2,height/4);
