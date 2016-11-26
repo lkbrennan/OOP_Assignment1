@@ -37,15 +37,17 @@ void draw()
 {
   background(0);
   
+  textAlign(CENTER,CENTER);
+  
   //scifi = loadFont("Xenotron.ttf");
   //textFont(scifi);
   
-  vision.render();
-  vision.update();
-  radar.update();
-  dead = power.update();
   compass.render();
   compass.update();
+  vision.render();
+  vision.update();
+  dead = power.update();
+  radar.update();
   //mic.render();
   //mic.update();
   //clock.update();

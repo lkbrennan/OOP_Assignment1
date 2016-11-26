@@ -5,22 +5,21 @@ class Compass
   float x,y;
   float theta=0;
   float theta1=0;
-  int[] compassnum = new int[10];
+  float[] compassnum = new float[16];
   int num=0;
-  int radius = height/5;
   
   Compass()
   {
     for(int i=0;i<compassnum.length;i++)
     {
       compassnum[i]=num;
-      num+=10;
+      num+=22.5f;
     }
   }
   
   void render()
   {
-    strokeWeight(3);
+    /*strokeWeight(3);
     pushMatrix();
     translate(cx,cy1);
     rotate(theta);
@@ -36,19 +35,44 @@ class Compass
     stroke(100,200,255);
     ellipse(0,0,width,height/5);
     popMatrix();
+    int i=0;*/
+
+    
+    
   }
   void update()
   {
-    for(int i=0;i<compassnum.length;i++)
-    {
-      x= cx + (radius*cos(theta1));
-      y= cy1 + (radius*sin(theta1));
+    float z = compassnum.length/2;
     
-      fill(100,200,255);
-      textSize(20);
-      text(compassnum[i],x,y);
-      theta1+=(360/compassnum.length);
-      //theta1=theta1+(360/compassnum.length);
+    if(mouseX==width/2)
+    {
+      for(int i=0;i<compassnum.length;i++)
+      {
+        String s = nf(compassnum[i],3,1);
+        x = (width/z)*i;
+        y = height/20;
+        text(s,x,y);
+      }
+    }
+    if(mouseX>width/2)
+    {
+      for(int i=0;i<compassnum.length;i++)
+      {
+        String s = nf(compassnum[i],3,1);
+        x = ((width/z)*i)-15;
+        y = height/20;
+        text(s,x,y);
+      }
+    }
+    if(mouseX<width/2)
+    {
+      for(int i=0;i<compassnum.length;i++)
+      {
+        String s = nf(compassnum[i],3,1);
+        x = ((width/z)*i)+15;
+        y = height/20;
+        text(s,x,y);
+      }
     }
   }
 }
