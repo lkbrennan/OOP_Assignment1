@@ -14,29 +14,28 @@ class Mic
     textAlign(CENTER,CENTER);
     fill(100,200,255);
     textSize(20);
-    text("SEND MESSAGE",width/10,height/5);
+    text("SEND MESSAGE",width/10,height/5-10);
   }
   
   void update()
   {
     stroke(100,200,250);
-    //float y = map(in.bufferSize()-1,in.bufferSize(),width/30,width/30+(width/30+4));
-    // draw the waveforms
-    // the values returned by left.get() and right.get() will be between -1 and 1,
-    // so we need to scale them up to see the waveform
-    for(int i = width/30; i < in.bufferSize() - 1; i++)
+    
+    for(int i = 0; i < in.bufferSize() - 1; i++)
     {
-      line(i, height/2 + in.left.get(i)*50, (width/30)+50, height/2 + in.left.get(i+1)*50);
-      line(i, (height/2)+30 + in.right.get(i)*50, (width/30)+50 , (height/2)+30 + in.right.get(i+1)*50);
+      float x1 = map( i, 0, in.bufferSize(), width/30, width/30+200 );
+      float x2 = map( i+1, 0, in.bufferSize(), width/30, width/30+200 );
+      line(x1, (height/4)+50 + in.left.get(i)*50, x2, (height/4)+50 + in.left.get(i+1)*50);
+      line(x1, (height/4)+100 + in.right.get(i)*50, x2 , (height/4)+100 + in.right.get(i+1)*50);
     }
     
     if ( recorder.isRecording() )
     {
-      text("Currently recording...", 5, 15);
+      text("Currently recording...", width/10,(height/6)+70);
     }
     else
     {
-      text("Not recording.", 5, 15);
+      text("Not recording.", width/10,(height/6)+70);
     }
   }
 }

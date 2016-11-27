@@ -48,8 +48,8 @@ void draw()
   compass.render();
   compass.update();
   radar.update();
-  //mic.render();
-  //mic.update();
+  mic.render();
+  mic.update();
   //clock.update();
   
   if(dead == true)

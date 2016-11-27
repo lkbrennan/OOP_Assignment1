@@ -71,6 +71,7 @@ class Compass
     
     for(int i=0;i<compassnum.length;i++)
       {
+        if(i<
         String s = nf(compassnum[i],3,1);
         x = ((width/z)*i) + counter;
         y = height/20;

@@ -45,8 +45,10 @@ class Radar
       }
     }
     
+    int a = 100;
+    
     noStroke();
-    fill(#FBFF29);
+    fill(255,237,31,a);
     ellipse(centerx, centery,20,20);
     
     if(message == true)
@@ -55,6 +57,8 @@ class Radar
       {
         textSize(12);
         text("Sending Ping ...... " + i + "% Completed",cx,(cy+radius)+10);
+        a--;
+        ellipse(centerx, centery,20,20);
         if(frameCount%4==0)
         {
           i++;
