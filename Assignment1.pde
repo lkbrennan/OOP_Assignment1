@@ -41,12 +41,12 @@ void draw()
   
   //scifi = loadFont("Xenotron.ttf");
   //textFont(scifi);
-  
-  compass.render();
-  compass.update();
+ 
   vision.render();
   vision.update();
   dead = power.update();
+  compass.render();
+  compass.update();
   radar.update();
   //mic.render();
   //mic.update();
