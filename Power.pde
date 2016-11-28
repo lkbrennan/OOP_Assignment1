@@ -15,7 +15,7 @@ class Power
     
     textAlign(CENTER,CENTER);
     
-    if(frameCount%10==0)
+    if(frameCount%30==0)
     {
       power-=1;
     }

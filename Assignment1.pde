@@ -36,8 +36,8 @@ void setup()
   power = new Power();
   compass = new Compass();
   mic = new Mic();
-  tank.add(new Tanks(90, width/12*10, "Oxygen"));
-  tank.add(new Tanks(90, width/12*10+100,"Oxygen"));
+  tank.add(new Tanks(90, width/12*10, "Oxygen1"));
+  tank.add(new Tanks(90, width/12*10+100,"Oxygen2"));
 }
 
 
@@ -48,7 +48,6 @@ void draw()
   
   textAlign(CENTER,CENTER);
  
-  vision.render();
   vision.update();
   compass.render();
   compass.update();

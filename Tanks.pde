@@ -22,12 +22,12 @@ class Tanks
       {
         percent=percent-(int(random(0,2)));
       }
-      
       y=map(percent,0,100,height/2,height/5*4+50);
+      float start = height/5*4+50;
     
       noStroke();
       fill(100,200,250);
-      rect(x,height/5*4+50,70,-y);
+      rect(x,start+y,70,y);
       
       fill(100,200,250);
       textSize(20);

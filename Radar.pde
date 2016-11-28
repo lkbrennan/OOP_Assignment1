@@ -48,7 +48,7 @@ class Radar
     if(message == true)
     {
       noStroke();
-      fill(255,237,31);
+      fill(250,0,0);
       ellipse(centerx, centery,20,20);
       
       if(i<100)

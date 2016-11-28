@@ -45,35 +45,31 @@ class Vision
     shape1.vertex(-x-20,-y+10);
     shape1.endShape(CLOSE);
   }
-  
-  void render()
-  {
-    strokeWeight(1);
-    pushMatrix();
-    translate(width/2,height/2);
-    rotate(theta);
-    noFill();
-    stroke(100,200,255);
-    ellipse(0,0,size,size);
-    arc(0,0,size1,size1,PI,PI+QUARTER_PI);
-    arc(0,0,size1,size1,PI+HALF_PI,TWO_PI+QUARTER_PI);
-    arc(0,0,size1,size1,TWO_PI+HALF_PI,TWO_PI+(QUARTER_PI*3));
-    rotate(theta1);
-    strokeWeight(1);
-    arc(0,0,size2,size2,PI,PI+(QUARTER_PI/2));
-    arc(0,0,size2,size2,PI+QUARTER_PI,TWO_PI+HALF_PI);
-    rotate(theta2);
-    arc(0,0,size3,size3,PI,PI+(QUARTER_PI*3));
-    arc(0,0,size3,size3,TWO_PI,TWO_PI+QUARTER_PI);
-    arc(0,0,size3,size3,TWO_PI+(HALF_PI/4)*3,TWO_PI+(HALF_PI+QUARTER_PI));
-    rotate(theta3);
-    shape(shape,0,0);
-    shape(shape1,0,0);
-    popMatrix();  
-  }
-  
+
   void update()
   {
+      strokeWeight(1);
+      pushMatrix();
+      translate(mouseX,mouseY);
+      rotate(theta);
+      noFill();
+      stroke(100,200,255);
+      ellipse(0,0,size,size);
+      arc(0,0,size1,size1,PI,PI+QUARTER_PI);
+      arc(0,0,size1,size1,PI+HALF_PI,TWO_PI+QUARTER_PI);
+      arc(0,0,size1,size1,TWO_PI+HALF_PI,TWO_PI+(QUARTER_PI*3));
+      rotate(theta1);
+      strokeWeight(1);
+      arc(0,0,size2,size2,PI,PI+(QUARTER_PI/2));
+      arc(0,0,size2,size2,PI+QUARTER_PI,TWO_PI+HALF_PI);
+      rotate(theta2);
+      arc(0,0,size3,size3,PI,PI+(QUARTER_PI*3));
+      arc(0,0,size3,size3,TWO_PI,TWO_PI+QUARTER_PI);
+      arc(0,0,size3,size3,TWO_PI+(HALF_PI/4)*3,TWO_PI+(HALF_PI+QUARTER_PI));
+      rotate(theta3);
+      shape(shape,0,0);
+      shape(shape1,0,0);
+      popMatrix();  
       theta+=0.05f;
       theta1-=0.1f;
       theta2+=0.02f;
