@@ -1,7 +1,8 @@
 class Compass
 {
   float x,y;
-  float[] compassnum = new float[16];
+  float theta=0;
+  float[] compassnum = new float[48];
   float num=0;
   int counter = 5;
   
@@ -10,7 +11,15 @@ class Compass
     for(int i=0;i<compassnum.length;i++)
     {
       compassnum[i]=num;
-      num+=22.5f;
+      if(num<337.5)
+      {
+        num+=22.5f;
+      }
+      else
+      {
+        num=0;
+      }
+      println(compassnum[i]);
     }
   }
   
@@ -23,7 +32,7 @@ class Compass
     stroke(100,200,250);
     textSize(30);
     
-    float z = compassnum.length/2;
+    float z = compassnum.length/6;
   
     if(mouseX==width/2)
     {
@@ -47,20 +56,25 @@ class Compass
       }
     }
     
-    for(int i=0;i<compassnum.length;i++)
+    for(int i=0;i<compassnum.length/2;i++)
     {
       String s = nf(compassnum[i],3,1);
-      x = ((width/z)*i) + counter;
+      x = 0-width +((width/z)*i) + counter;
       y = height/20;
       stroke(100,200,250);
       textSize(30);
       text(s,x,y);
-      if(counter==-1615)
-      {
-        i=0;
-      }
     }
-    println(counter);
+    for(int j = compassnum.length-1;j>compassnum.length/2;j--)
+    {
+      String s = nf(compassnum[j],3,1);
+      x = width+width-(((width/z)*j) + counter);
+      y = height/20;
+      fill(100,200,250);
+      textSize(30);
+      text(s,x,y);
+    }
+    
   }
   
 }
