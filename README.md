@@ -22,7 +22,8 @@ I have included in my HUD
 
 1)A Compass (Top of the Screen)
 
-	This will show the coordinates of the direction the user is facing (by moving their mouse to the left and right of the screen)
+	This will show the coordinates of the direction the user is facing 
+	(by moving their mouse to the left and right of the screen)
 	
 2)A Power Bar (Bottom Left of the Screen)
 
@@ -37,10 +38,10 @@ I have included in my HUD
 	
 4)A Radar(Top Right of the Screen)
 
-	The radar lets the user pick a designated spot on the screen and send it to other users as a spot 
-	of importance
+	The radar lets the user pick a designated spot on the screen and send it to other 
+	users as a spot of importance
 	
 5)Vision(Center of the Screen)
 
-	The vision lens is useful for showing the user the direct point in front of them and focusing on it
+	The vision lens focuses on a point the user is interested in(mouseX,mouseY)
 	
