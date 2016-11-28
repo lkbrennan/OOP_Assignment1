@@ -23,7 +23,7 @@ class Tanks
         percent=percent-(int(random(0,2)));
       }
       
-      y=map(percent,0,100,(height/5)*4+50,(height/5)*4);
+      y=map(percent,0,100,height/2,height/5*4+50);
     
       noStroke();
       fill(100,200,250);

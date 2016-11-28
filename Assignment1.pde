@@ -15,9 +15,14 @@ Radar radar;
 Power power;
 Compass compass;
 
+PImage img;
+
 void setup()
 {
   fullScreen();
+  
+  img = loadImage("wasteland2.jpg");
+  img.resize(width,height);
   
   tank = new ArrayList<Tanks>();
   
@@ -39,6 +44,7 @@ void setup()
 void draw()
 {
   background(0);
+  image(img,0,0);
   
   textAlign(CENTER,CENTER);
  

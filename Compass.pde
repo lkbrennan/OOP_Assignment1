@@ -19,7 +19,6 @@ class Compass
       {
         num=0;
       }
-      println(compassnum[i]);
     }
   }
   
