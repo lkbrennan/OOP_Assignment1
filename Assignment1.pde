@@ -1,5 +1,7 @@
 import ddf.minim.*;
 
+ArrayList<Tanks> tank = new ArrayList<Tanks>();
+
 Minim minim;
 AudioInput in;
 AudioRecorder recorder;
@@ -26,6 +28,8 @@ void setup()
   power = new Power();
   compass = new Compass();
   mic = new Mic();
+  tank.add(new Tanks(100));
+  tank.add(new Tanks(int(random(0,10))));
 }
 
 
