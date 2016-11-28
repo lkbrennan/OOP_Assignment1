@@ -1,12 +1,13 @@
 import ddf.minim.*;
 
-ArrayList<Tanks> tank = new ArrayList<Tanks>();
+ArrayList<Tanks> tank;
 
 Minim minim;
 AudioInput in;
 AudioRecorder recorder;
   
 boolean dead = false; 
+int tankcounter=0;
 
 Mic mic;
 Vision vision;
@@ -18,6 +19,8 @@ void setup()
 {
   fullScreen();
   
+  tank = new ArrayList<Tanks>();
+  
   minim = new Minim(this);
 
   in = minim.getLineIn();
@@ -28,8 +31,8 @@ void setup()
   power = new Power();
   compass = new Compass();
   mic = new Mic();
-  tank.add(new Tanks(100));
-  tank.add(new Tanks(int(random(0,10))));
+  tank.add(new Tanks(90, width/12*10, "Oxygen"));
+  tank.add(new Tanks(90, width/12*10+100,"Oxygen"));
 }
 
 
@@ -38,9 +41,6 @@ void draw()
   background(0);
   
   textAlign(CENTER,CENTER);
-  
-  //scifi = loadFont("Xenotron.ttf");
-  //textFont(scifi);
  
   vision.render();
   vision.update();
@@ -50,6 +50,15 @@ void draw()
   mic.render();
   mic.update();
   dead = power.update();
+  Tanks t1 = tank.get(0);
+  tankcounter=t1.update(tankcounter);
+  Tanks t2 = tank.get(1);
+  tankcounter=t2.update(tankcounter);
+  
+  if(tankcounter==2)
+  {
+    dead=true;
+  }
   
   if(dead == true)
   {

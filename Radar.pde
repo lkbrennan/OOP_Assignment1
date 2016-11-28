@@ -45,12 +45,12 @@ class Radar
       }
     }
     
-    noStroke();
-    fill(255,237,31);
-    ellipse(centerx, centery,20,20);
-    
     if(message == true)
     {
+      noStroke();
+      fill(255,237,31);
+      ellipse(centerx, centery,20,20);
+      
       if(i<100)
       {
         textSize(12);
