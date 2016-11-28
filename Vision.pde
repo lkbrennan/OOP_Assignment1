@@ -1,16 +1,18 @@
 class Vision
 {
   float theta=0,theta1=0,theta2=0,theta3=0;
-  float size1,size2,size3;
+  float size,size1,size2,size3;
   float radius;
   float x,y;
   int center = 0;
+  int counter = 50;
   float j;
   
   PShape shape,shape1;
   
-  Vision(float size1, float size2, float size3)
+  Vision(float size, float size1, float size2, float size3)
   {
+    this.size=size;
     this.size1=size1;
     this.size2=size2;
     this.size3=size3;
@@ -52,7 +54,7 @@ class Vision
     rotate(theta);
     noFill();
     stroke(100,200,255);
-    ellipse(0,0,180,180);
+    ellipse(0,0,size,size);
     arc(0,0,size1,size1,PI,PI+QUARTER_PI);
     arc(0,0,size1,size1,PI+HALF_PI,TWO_PI+QUARTER_PI);
     arc(0,0,size1,size1,TWO_PI+HALF_PI,TWO_PI+(QUARTER_PI*3));
@@ -67,26 +69,24 @@ class Vision
     rotate(theta3);
     shape(shape,0,0);
     shape(shape1,0,0);
-    popMatrix();
-    
+    popMatrix();  
   }
   
   void update()
   {
-    
-    theta+=0.05f;
-    theta1-=0.1f;
-    theta2+=0.02f;
-    
-    float i = random(0,1);
-    
-    if(i<0.5f)
-    {
-      theta3-=0.01f;
-    }
-    if(i>0.5f)
-    {
-      theta3+=0.01f;
-    }
+      theta+=0.05f;
+      theta1-=0.1f;
+      theta2+=0.02f;
+      
+      float i = random(0,1);
+      
+      if(i<0.5f)
+      {
+        theta3-=0.01f;
+      }
+      if(i>0.5f)
+      {
+        theta3+=0.01f;
+      }
   }
 }
