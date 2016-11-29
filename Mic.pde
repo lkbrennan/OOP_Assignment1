@@ -5,7 +5,7 @@ class Mic
   {
   }
   
-  
+  //Draws button for Mic to record
   void render()
   {
     stroke(100,200,255);
@@ -21,6 +21,7 @@ class Mic
   {
     stroke(100,200,250);
     
+    //if the recorder is recording this function gets the sound waves from the mic and maps and draws them to the screen
     if ( recorder.isRecording() )
     {
       text("Currently recording...", width/10,(height/6)+70);
@@ -32,6 +33,7 @@ class Mic
         line(x1, (height/4)+100 + in.right.get(i)*50, x2 , (height/4)+100 + in.right.get(i+1)*50);
       }
     }
+    //if its not recording it draws two lines that are stationary
     else
     {
       text("Not recording.", width/10,(height/6)+70);
