@@ -13,6 +13,7 @@ class Radar
   
   Radar()
   {
+    //calculates center x and y points;
     this.cx = (width/10)*9;
     this.cy = (height/4);
   }
@@ -35,6 +36,7 @@ class Radar
     }
     theta += speed;
     
+    //if mouse is clicked within the radar, message will be equal to true and a point will be PINGed (ellipse drawn)
     if(mousePressed == true)
     {
       if((mouseX>(cx-radius))&&(mouseX<(cx+radius))&&(mouseY>(cy-radius))&&(mouseY<(cy+radius)))
