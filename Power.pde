@@ -15,7 +15,7 @@ class Power
     
     textAlign(CENTER,CENTER);
     
-    if(frameCount%30==0)
+    if(frameCount%5==0)
     {
       power-=1;
     }
@@ -29,7 +29,7 @@ class Power
       noFill();
       arc(width/12,(height/5)*4,150,150,PI,arc);
       fill(100,200,250);
-      textSize(30);
+      textSize(40);
       text(power + "%",(width/12),(height/5)*4);
     }
     if((power<40)&&(power>20))
@@ -39,7 +39,7 @@ class Power
       noFill();
       arc(width/12,(height/5)*4,150,150,PI,arc);
       fill(#FBFF29);
-      textSize(30);
+      textSize(40);
       text(power + "%",(width/12),(height/5)*4);
     }
     if((power<20)&&(power>0))

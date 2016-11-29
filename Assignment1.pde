@@ -7,7 +7,6 @@ AudioInput in;
 AudioRecorder recorder;
   
 boolean dead = false; 
-int tankcounter=0;
 
 Mic mic;
 Vision vision;
@@ -36,8 +35,8 @@ void setup()
   power = new Power();
   compass = new Compass();
   mic = new Mic();
-  tank.add(new Tanks(90, width/12*10, "Oxygen1"));
-  tank.add(new Tanks(90, width/12*10+100,"Oxygen2"));
+  tank.add(new Tanks(100, height/5*4, "Oxygen1"));
+  tank.add(new Tanks(100, height/5*4+60,"Oxygen2"));
 }
 
 
@@ -56,14 +55,9 @@ void draw()
   mic.update();
   dead = power.update();
   Tanks t1 = tank.get(0);
-  tankcounter=t1.update(tankcounter);
+  t1.update();
   Tanks t2 = tank.get(1);
-  tankcounter=t2.update(tankcounter);
-  
-  if(tankcounter==2)
-  {
-    dead=true;
-  }
+  t2.update();
   
   if(dead == true)
   {
@@ -73,19 +67,16 @@ void draw()
 
 void endScreen()
 {
-  float x = width/5;
-  float y = height/4;
   float cx = (width/5)+((width/5)*3)/2;
   float cy = height/4 +((height/4)*2)/2;
   
   stroke(255,0,0);
   fill(0);
-  rect(x,y,(width/5)*3, (height/4)*2);
+  rect(0,0,width,height);
   fill(255,0,0);
   textSize(70);
   textAlign(CENTER,CENTER);
-  text("FATAL ERROR",cx,cy);
-    
+  text("FATAL ERROR",cx,cy); 
 }
 
 void mouseReleased()

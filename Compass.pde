@@ -60,7 +60,7 @@ class Compass
       String s = nf(compassnum[i],3,1);
       x = 0-width +((width/z)*i) + counter;
       y = height/20;
-      stroke(100,200,250);
+      fill(100,200,250);
       textSize(30);
       text(s,x,y);
     }

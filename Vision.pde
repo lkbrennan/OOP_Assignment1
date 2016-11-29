@@ -70,6 +70,7 @@ class Vision
       shape(shape,0,0);
       shape(shape1,0,0);
       popMatrix();  
+      
       theta+=0.05f;
       theta1-=0.1f;
       theta2+=0.02f;
