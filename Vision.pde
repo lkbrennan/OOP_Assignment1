@@ -6,7 +6,6 @@ class Vision
   float x,y;
   int center = 0;
   int counter = 50;
-  float j;
   
   PShape shape,shape1;
   
@@ -23,6 +22,7 @@ class Vision
     create();
   }
   
+  //creates PShapes for two triangles
   void create()
   {
     shape = createShape();
@@ -48,6 +48,7 @@ class Vision
 
   void update()
   {
+      //translates the origin to mouseX and mouseY and rotates everything around different theta angles
       strokeWeight(1);
       pushMatrix();
       translate(mouseX,mouseY);
@@ -71,6 +72,7 @@ class Vision
       shape(shape1,0,0);
       popMatrix();  
       
+      //theta angles incremented and decremented at different speeds
       theta+=0.05f;
       theta1-=0.1f;
       theta2+=0.02f;
