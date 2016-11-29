@@ -1,12 +1,18 @@
-import ddf.minim.*;
+/*
+Student Name: Lauren Keenan Brennan
+Student Number: C15434102
+Date: 29/November/2016
+*/
 
-ArrayList<Tanks> tank;
+//importing libraries because i am using minim to take in sound input from the microphone
+import ddf.minim.*;
 
 Minim minim;
 AudioInput in;
 AudioRecorder recorder;
-  
-boolean dead = false; 
+
+//Class Prototypes and ArrayLists
+ArrayList<Tanks> tank;
 
 Mic mic;
 Vision vision;
@@ -14,22 +20,27 @@ Radar radar;
 Power power;
 Compass compass;
 
+//holds the value for if the end screen should appear or not
+boolean dead = false; 
+
+//PImage holds my background image
 PImage img;
 
 void setup()
 {
   fullScreen();
   
+  //loads image into sketch and resizes it to fullscreen
   img = loadImage("wasteland2.jpg");
   img.resize(width,height);
-  
-  tank = new ArrayList<Tanks>();
   
   minim = new Minim(this);
 
   in = minim.getLineIn();
   recorder = minim.createRecorder(in, "myrecording.wav");
     
+  //creates new instances of the classes
+  tank = new ArrayList<Tanks>();
   vision = new Vision(180,220,260,360);
   radar = new Radar();
   power = new Power();
@@ -79,6 +90,7 @@ void endScreen()
   text("FATAL ERROR",cx,cy); 
 }
 
+//Method for user to click my Mic button and set the recorder to recording or not recording
 void mouseReleased()
 {
   if((mouseX<width+((width/30)*4))&&(mouseX>width/30))
