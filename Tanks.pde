@@ -29,13 +29,14 @@ class Tanks
     
     if(percent>0)
     {
-    x=map(percent,0,100,start,start+200);
-    noStroke();
-    fill(100,200,250);
-    rect(x,y,start-x,30);
-    textSize(20);
-    text(type, start+250,y+15);
-    text(percent+"%",start-25,y+15);
+      //maps percent as a value from 1 to 100 in a range of 200 at the given positions
+      x=map(percent,0,100,start,start+200);
+      noStroke();
+      fill(100,200,250);
+      rect(x,y,start-x,30);
+      textSize(20);
+      text(type, start+250,y+15);
+      text(percent+"%",start-25,y+15);
     }
     if(percent<=0)
     {
